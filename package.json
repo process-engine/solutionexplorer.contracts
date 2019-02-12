@@ -1,6 +1,6 @@
 {
   "name": "@process-engine/solutionexplorer.contracts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Global contracts for the SolutionExplorer",
   "main": "dist/amd/index.js",
   "typings": "dist/index.d.ts",
