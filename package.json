@@ -1,24 +1,26 @@
 {
   "name": "@process-engine/solutionexplorer.contracts",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Global contracts for the SolutionExplorer",
   "main": "dist/amd/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "gulp build",
-    "prepare": "npm run build && npm run build-schemas && npm run build-doc",
-    "lint": "gulp lint",
-    "test": "gulp test"
+    "clean": "rm -rf dist",
+    "build": "npm run clean && npm run build-commonjs && npm run build-amd",
+    "build-commonjs": "tsc",
+    "build-amd": "tsc --module amd --outDir ./dist/amd",
+    "prepare": "npm run build",
+    "lint": "eslint src/*.ts",
+    "lint-fix": "eslint --fix src/*.ts",
+    "test": ":"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@essential-projects/tslint-config": "1.0.0",
-    "gulp": "^3.9.1",
-    "gulptraum": "^2.3.0",
-    "gulptraum-typescript": "^1.5.0",
+    "@essential-projects/eslint-config": "^1.0.0",
+    "@process-engine/ci_tools": "^2.0.0",
+    "eslint": "^5.16.0",
     "tsconfig": "^7.0.0",
-    "tslint": "^5.10.0",
-    "typescript": "^2.8.3"
+    "typescript": "^3.1.6"
   }
 }
